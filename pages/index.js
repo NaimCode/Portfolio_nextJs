@@ -2,6 +2,7 @@ import Hero from "../components/Hero";
 import Nav from "../components/Nav";
 import ServiceSection from "../components/ServiceSection";
 import { useEffect } from "react";
+import { service } from "../data/internal";
 export default function Home() {
   useEffect(() => {
     const callback = function (entries) {
@@ -70,30 +71,102 @@ export default function Home() {
           <img src="/hero.svg" alt="" className=" w-full h-[60vh] " />
         </div>
       </div>
-      <div className="vis flex flex-row justify-around  w-full h-auto   lg:px-28">
+      <div className="vis flex flex-row justify-around  w-full h-auto bg-primary-light bg-opacity-10 py-36  lg:px-28">
         <div className="w-2/5 h-[400px] bg-secondary-light overflow-hidden anim1">
           <img src="/avatar.jpg" alt="" className="object-cover" />
         </div>
         <div className="w-[50%] h-[400px] flex flex-col anim2">
-          <h2 className="text-6xl  text-accent-dark font-special font-semibold">
-            <span className="text-9xl font-bold text-secondary-light">A</span>
+          <h2 className="group text-[6vw]  text-accent-dark font-special font-semibold hover:text-secondary-light transition-colors 1s">
+            <span className="text-[10vw] font-bold text-secondary-light group-hover:text-accent-light transition-colors 1s">
+              A
+            </span>
             bout Me
           </h2>
           <div className="flex-grow flex flex-col justify-center">
-            <p className="text-accent-light font-primary text-lg">
-              Ayant obtenu une licence en Science Mathématique {"&"}{" "}
-              Informatique à l'université Ibn Tofail de Kenitra au Maroc, je
-              suis actuellement à l'école d'ingénieur ISGA de Rabat au Maroc
-              pour un diplôme d'ingénieur en développement web et mobile.
+            <p className="text-accent-light font-primary text-lg text-opacity-80 ">
+              Ayant obtenu une licence en{" "}
+              <span className="text-secondary-light ">
+                {" "}
+                Science Mathématique {"&"} Informatique
+              </span>{" "}
+              à l'université{" "}
+              <span className="text-secondary-light">Ibn Tofail</span> de
+              Kenitra au Maroc, je suis actuellement à l'école d'ingénieur{" "}
+              <span className="text-secondary-light">ISGA</span> de Rabat au
+              Maroc pour un diplôme d'{" "}
+              <span className="text-secondary-light">
+                ingénieur en développement web et mobile
+              </span>
+              .
             </p>
           </div>
         </div>
       </div>
-      <div className="text-accent-light flex justify-center items-center w-full h-screen">
-        <h1 className="text-4xl">Page 2</h1>
+      <div className="w-full lg:px-28 ">
+        <div className="flex flex-col justify-center items-center">
+          <h2 className="group text-[6vw]  text-accent-dark font-special font-semibold hover:text-secondary-light transition-colors 1s">
+            <span className="text-[10vw] font-bold text-secondary-light group-hover:text-accent-light transition-colors 1s">
+              S
+            </span>
+            ervices
+          </h2>
+          <p className="text-accent-light font-primary text-lg text-opacity-80 max-w-2xl">
+            Ayant obtenu une licence en{" "}
+            <span className="text-secondary-light ">
+              {" "}
+              Science Mathématique {"&"} Informatique
+            </span>{" "}
+            à l'université{" "}
+            <span className="text-secondary-light">Ibn Tofail</span> de Kenitra
+            au Maroc, je suis actuellement à l'école d'ingénieur{" "}
+            <span className="text-secondary-light">ISGA</span> de Rabat au Maroc
+            pour un diplôme d'{" "}
+            <span className="text-secondary-light">
+              ingénieur en développement web et mobile
+            </span>
+            .
+          </p>
+        </div>
+        <div className="grid grid-cols-2 py-12 gap-16">
+          {service.map((s) => (
+            <div className=" bg-primary bg-opacity-20 anim1 p-6 rounded-xl hover:scale-105 transition-all duration-300">
+              <h3 className="text-3xl text-center text-secondary-light">
+                {s.title}
+              </h3>
+              <img src={s.image} alt="" className="w-full scale-75" />
+              {/* <div className="h-[2px] w-full bg-accent-light opacity-25 my-7"></div> */}
+              <div>
+                <p className="text-accent-light opacity-90">{s.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="text-accent-light flex justify-center items-center w-full h-screen">
-        <h1 className="text-4xl">Page 3</h1>
+      <div className="w-full bg-primary-light bg-opacity-10 py-36 lg:px-28 ">
+        <div className="flex flex-col justify-center items-center">
+          <h2 className="group text-[6vw]  text-accent-dark font-special font-semibold hover:text-secondary-light transition-colors 1s">
+            <span className="text-[10vw] font-bold text-secondary-light group-hover:text-accent-light transition-colors 1s">
+              P
+            </span>
+            rojects
+          </h2>
+          <p className="text-accent-light font-primary text-lg text-opacity-80 max-w-2xl">
+            Ayant obtenu une licence en{" "}
+            <span className="text-secondary-light ">
+              {" "}
+              Science Mathématique {"&"} Informatique
+            </span>{" "}
+            à l'université{" "}
+            <span className="text-secondary-light">Ibn Tofail</span> de Kenitra
+            au Maroc, je suis actuellement à l'école d'ingénieur{" "}
+            <span className="text-secondary-light">ISGA</span> de Rabat au Maroc
+            pour un diplôme d'{" "}
+            <span className="text-secondary-light">
+              ingénieur en développement web et mobile
+            </span>
+            .
+          </p>
+        </div>
       </div>
     </>
   );
