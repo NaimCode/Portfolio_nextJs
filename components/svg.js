@@ -5,7 +5,7 @@ export const Logo = () => {
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         width="72.038"
-        height="60.058"
+        height="50.058"
         viewBox="0 0 72.038 71.058"
       >
         <defs>
