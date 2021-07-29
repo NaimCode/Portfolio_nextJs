@@ -129,7 +129,7 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-2 py-12 gap-16">
           {service.map((s) => (
-            <div className=" bg-primary bg-opacity-20 anim1 p-6 rounded-xl hover:scale-105 transition-all duration-300">
+            <div className=" bg-primary bg-opacity-20 backdrop-filter backdrop-blur-lg anim1 p-6 rounded-xl hover:scale-105 transition-all duration-300">
               <h3 className="text-3xl text-center text-secondary-light">
                 {s.title}
               </h3>
