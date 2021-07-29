@@ -1,6 +1,7 @@
 import "tailwindcss/tailwind.css";
 import Particles from "react-particles-js";
 import Head from "next/head";
+import Nav from "../components/Nav";
 function MyApp({ Component, pageProps }) {
   return (
     <div>
@@ -32,13 +33,13 @@ function MyApp({ Component, pageProps }) {
                 },
               },
               color: {
-                value: "#201d2f",
+                value: "#F77F00",
               },
               shape: {
                 type: "polygon",
                 stroke: {
                   width: 0,
-                  color: "#000",
+                  color: "#F77F00",
                 },
                 polygon: {
                   nb_sides: 6,
@@ -61,7 +62,7 @@ function MyApp({ Component, pageProps }) {
               },
               size: {
                 value: 184.39238699953512,
-                random: true,
+                random: false,
                 anim: {
                   enable: true,
                   speed: 10,
@@ -80,7 +81,7 @@ function MyApp({ Component, pageProps }) {
                 enable: true,
                 speed: 3,
                 direction: "none",
-                random: false,
+                random: true,
                 straight: false,
                 out_mode: "out",
                 bounce: false,
@@ -133,8 +134,10 @@ function MyApp({ Component, pageProps }) {
             retina_detect: true,
           }}
         ></Particles>
-
-        <div className="absolute top-0 h-screen w-full overflow-y-scroll">
+        <div className="absolute top-0 left-0 z-50 w-full backdrop-filter backdrop-blur-md">
+          <Nav />
+        </div>
+        <div className="absolute top-0 h-screen w-full overflow-y-scroll backdrop-filter backdrop-blur-lg">
           <Component {...pageProps} />
         </div>
       </div>

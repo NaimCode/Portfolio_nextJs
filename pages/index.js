@@ -3,6 +3,7 @@ import Nav from "../components/Nav";
 import ServiceSection from "../components/ServiceSection";
 import { useEffect } from "react";
 import { service } from "../data/internal";
+import { CheckIcon } from "../components/svg";
 export default function Home() {
   useEffect(() => {
     const callback = function (entries) {
@@ -13,6 +14,7 @@ export default function Home() {
           entry.target.classList.add("animate-topOpa1");
         } else {
           entry.target.classList.remove("animate-topOpa1");
+          entry.target.classList.add("opacity-0");
         }
       });
     };
@@ -21,13 +23,28 @@ export default function Home() {
         console.log(entry);
 
         if (entry.isIntersecting) {
-          entry.target.classList.add("animate-topOpa3");
+          entry.target.classList.add("animate-topOpa2");
         } else {
-          entry.target.classList.remove("animate-topOpa3");
+          entry.target.classList.remove("animate-topOpa2");
+          entry.target.classList.add("opacity-0");
+        }
+      });
+    };
+    const callback3 = function (entries) {
+      entries.forEach((entry) => {
+        console.log(entry);
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fixe");
+        } else {
+          entry.target.classList.remove("fixe");
+          entry.target.classList.add("opacity-0");
         }
       });
     };
     const observer2 = new IntersectionObserver(callback2);
+
+    const observer3 = new IntersectionObserver(callback3);
     const observer = new IntersectionObserver(callback);
     const targets2 = document.querySelectorAll(".anim2");
     targets2.forEach(function (target) {
@@ -37,16 +54,21 @@ export default function Home() {
     targets.forEach(function (target) {
       observer.observe(target);
     });
+
+    const targets3 = document.querySelectorAll(".nav");
+    targets3.forEach(function (target) {
+      observer3.observe(target);
+    });
     // return () => {
     //   cleanup
     // }
   }, []);
   return (
     <>
-      <Nav />
+      
       <div className="text-accent-light flex flex-row justify-around items-center w-full h-[100vh]   lg:px-28 ">
         <div className="w-2/5 flex flex-col justify-center ">
-          <span className="font-primary text-accent-light text-[3vw] anim2">
+          <span className="font-primary text-accent-light text-[3vw] anim2 opacity-0">
             Bonjour, je suis{" "}
           </span>
           <h1 className="font-primary text-secondary-light text-[4vw] font-bold anim2">
@@ -72,7 +94,7 @@ export default function Home() {
         </div>
       </div>
       <div className="vis flex flex-row justify-around  w-full h-auto bg-primary-light bg-opacity-10 py-36  lg:px-28">
-        <div className="w-2/5 h-[400px] bg-secondary-light overflow-hidden anim1">
+        <div className="w-2/5 h-[400px] bg-secondary-light overflow-hidden opacity-0 anim1">
           <img src="/avatar.jpg" alt="" className="object-cover" />
         </div>
         <div className="w-[50%] h-[400px] flex flex-col anim2">
@@ -127,19 +149,41 @@ export default function Home() {
             .
           </p>
         </div>
-        <div className="grid grid-cols-2 py-12 gap-16">
-          {service.map((s) => (
-            <div className=" bg-primary bg-opacity-20 backdrop-filter backdrop-blur-lg anim1 p-6 rounded-xl hover:scale-105 transition-all duration-300">
-              <h3 className="text-3xl text-center text-secondary-light">
-                {s.title}
-              </h3>
-              <img src={s.image} alt="" className="w-full scale-75" />
-              {/* <div className="h-[2px] w-full bg-accent-light opacity-25 my-7"></div> */}
-              <div>
-                <p className="text-accent-light opacity-90">{s.description}</p>
+        <div className="flex justify-center">
+          <div className="max-w-3xl grid grid-cols-2 py-12 gap-16">
+            {service.map((s) => (
+              <div className=" bg-primary bg-opacity-20 backdrop-filter backdrop-blur-lg anim1 p-6 rounded-xl hover:scale-105 transition-all duration-300">
+                <h3 className="text-3xl text-center text-secondary-light">
+                  {s.title}
+                </h3>
+                <img src={s.image} alt="" className="w-full scale-75" />
+                {/* <div className="h-[2px] w-full bg-accent-light opacity-25 my-7"></div> */}
+                <div className="flex flex-wrap gap-4 justify-center">
+                  {s.framework.map((f) => (
+                    <div className="rounded-lg py-2 px-4 text-black  bg-gray-300 ">
+                      {f}
+                    </div>
+                  ))}
+                </div>
+
+                {/* {s.services.map((ser) => (
+                <div className="flex items-start">
+                  <svg
+                    className="text-secondary-light"
+                    width="24"
+                    height="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                  >
+                    <path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm7 7.457l-9.005 9.565-4.995-5.865.761-.649 4.271 5.016 8.24-8.752.728.685z" />
+                  </svg>
+                  <span className="flex-grow">{ser}</span>
+                </div>
+              ))} */}
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
       <div className="w-full bg-primary-light bg-opacity-10 py-36 lg:px-28 ">

@@ -5,16 +5,16 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        topOpa1: "topOpa1 1.1s",
-        topOpa2: "topOpa2 1.1s",
-        topOpa3: "topOpa3 1.1s",
-        topOpa4: "topOpa4 1.1s",
+        topOpa1: "topOpa1 1.5s forwards",
+        topOpa2: "topOpa2 1.8s forwards",
+        topOpa3: "topOpa3 2.1s forwards",
+        topOpa4: "topOpa4 2.4s forwards",
       },
       keyframes: {
         topOpa1: {
           from: {
             opacity: "0",
-            transform: "translateY(-30px)",
+            transform: "translateY(40px)",
           },
           to: {
             opacity: "1",
@@ -24,11 +24,11 @@ module.exports = {
         topOpa2: {
           from: {
             opacity: "0",
-            transform: "translateY(-30px)",
+            transform: "translateY(40px)",
           },
           "20%": {
             opacity: "0",
-            transform: "translateY(-15px)",
+            transform: "translateY(40px)",
           },
           to: {
             opacity: "1",
@@ -38,12 +38,13 @@ module.exports = {
         topOpa3: {
           from: {
             opacity: "0",
-            transform: "translateY(-30px)",
+            transform: "translateY(40px)",
           },
-          "40%": {
+          "35%": {
             opacity: "0",
-            transform: "translateY(-10px)",
+            transform: "translateY(40px)",
           },
+
           to: {
             opacity: "1",
             transform: "translateY(0)",
@@ -52,12 +53,13 @@ module.exports = {
         topOpa4: {
           from: {
             opacity: "0",
-            transform: "translateY(-30px)",
+            transform: "translateY(40px)",
           },
-          "60%": {
+          "50%": {
             opacity: "0",
-            transform: "translateY(-20px)",
+            transform: "translateY(40px)",
           },
+
           to: {
             opacity: "1",
             transform: "translateY(0)",
