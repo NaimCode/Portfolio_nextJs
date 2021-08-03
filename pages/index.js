@@ -4,11 +4,13 @@ import ServiceSection from "../components/ServiceSection";
 import { useEffect } from "react";
 import { service } from "../data/internal";
 import { CheckIcon } from "../components/svg";
-export default function Home() {
+import { language } from "../data/internal";
+import Projects from "../components/Projects";
+export default function Home({results}) {
   useEffect(() => {
     const callback = function (entries) {
       entries.forEach((entry) => {
-        console.log(entry);
+        // console.log(entry);
 
         if (entry.isIntersecting) {
           entry.target.classList.add("animate-topOpa1");
@@ -32,7 +34,7 @@ export default function Home() {
     };
     const callback3 = function (entries) {
       entries.forEach((entry) => {
-        console.log(entry);
+        // console.log(entry);
 
         if (entry.isIntersecting) {
           entry.target.classList.add("fixe");
@@ -65,47 +67,46 @@ export default function Home() {
   }, []);
   return (
     <>
-      
-      <div className="text-accent-light flex flex-row justify-around items-center w-full h-[100vh]   lg:px-28 ">
-        <div className="w-2/5 flex flex-col justify-center ">
-          <span className="font-primary text-accent-light text-[3vw] anim2 opacity-0">
+      <div className="text-accent-light px-2 md:px-0 h-auto flex flex-col md:flex-row justify-center md:justify-around items-center w-full md:h-[100vh]   lg:px-28 ">
+        <div className="h-[50vh]  md:h-auto w-full md:w-2/5 flex flex-col justify-end md:justify-center  items-center md:items-start">
+          <span className="font-primary text-accent-light text-4xl md:text-[3vw] anim2 opacity-0">
             Bonjour, je suis{" "}
           </span>
-          <h1 className="font-primary text-secondary-light text-[4vw] font-bold anim2">
+          <h1 className="font-primary text-secondary-light text-5xl md:text-[4vw] font-bold anim2">
             NAIM{" "}
-            <span className="font-primary text-accent-light text-[3vw] font-normal">
+            <span className="font-primary text-accent-light text-4xl md:text-[3vw] font-normal">
               AbdelKerim,
             </span>
           </h1>
-          <p className="text-[1.4vw] text-gray-400 anim2">
+          <p className="py-4 md:py-0 text-center md:text-left text-2xl md:text-[1.4vw] text-gray-400 anim2">
             Un développeur fullstack web and mobile.
           </p>
           <div>
             <button
-              className="border-secondary-light py-1 px-3 text-secondary-light border-2 my-9 
+              className="text-xl border-secondary-light py-1 px-3 text-secondary-light border-2 my-9 
              hover:bg-secondary-light hover:text-black transition duration-300 anim2"
             >
               Télecharger le CV
             </button>
           </div>
         </div>
-        <div className="w-[50%] flex flex-col justify-center items-center anim1 ">
-          <img src="/hero.svg" alt="" className=" w-full h-[60vh] " />
+        <div className="w-full h-[50vh] md:h-auto  md:w-[50%] flex flex-col justify-center items-center anim1 ">
+          <img src="/hero.svg" alt="" className=" w-full h-auto md:h-[60vh] " />
         </div>
       </div>
-      <div className="vis flex flex-row justify-around  w-full h-auto bg-primary-light bg-opacity-10 py-36  lg:px-28">
-        <div className="w-2/5 h-[400px] bg-secondary-light overflow-hidden opacity-0 anim1">
+      <div className="px-2 md:px-0 flex flex-col md:flex-row md:justify-around  w-full h-auto bg-primary-light bg-opacity-10 py-10 md:py-36  lg:px-28">
+        <div className="w-full md:w-2/5 h-[300px] md:h-[400px] bg-secondary-light overflow-hidden opacity-0 anim1">
           <img src="/avatar.jpg" alt="" className="object-cover" />
         </div>
-        <div className="w-[50%] h-[400px] flex flex-col anim2">
-          <h2 className="group text-[6vw]  text-accent-dark font-special font-semibold hover:text-secondary-light transition-colors 1s">
-            <span className="text-[10vw] font-bold text-secondary-light group-hover:text-accent-light transition-colors 1s">
+        <div className="w-full md:w-[50%] h-auto md:h-[400px] flex flex-col anim2">
+          <h2 className="py-4 md:py-0 text-center md:text-left group text-4xl md:text-[6vw]  text-accent-dark font-special font-semibold ">
+            <span className="text-6xl md:text-[10vw] font-bold text-secondary-light ">
               A
             </span>
             bout Me
           </h2>
           <div className="flex-grow flex flex-col justify-center">
-            <p className="text-accent-light font-primary text-lg text-opacity-80 ">
+            <p className="text-center md:text-left text-accent-light font-primary text-lg text-opacity-80 ">
               Ayant obtenu une licence en{" "}
               <span className="text-secondary-light ">
                 {" "}
@@ -124,33 +125,17 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="w-full lg:px-28 ">
+      <div className="w-full px-2 py-4 lg:px-28 ">
         <div className="flex flex-col justify-center items-center">
-          <h2 className="group text-[6vw]  text-accent-dark font-special font-semibold hover:text-secondary-light transition-colors 1s">
-            <span className="text-[10vw] font-bold text-secondary-light group-hover:text-accent-light transition-colors 1s">
+          <h2 className="group text-4xl md:text-[6vw] text-accent-dark font-special font-semibold ">
+            <span className="text-6xl md:text-[10vw]  font-bold text-secondary-light ">
               S
             </span>
             ervices
           </h2>
-          <p className="text-accent-light font-primary text-lg text-opacity-80 max-w-2xl">
-            Ayant obtenu une licence en{" "}
-            <span className="text-secondary-light ">
-              {" "}
-              Science Mathématique {"&"} Informatique
-            </span>{" "}
-            à l'université{" "}
-            <span className="text-secondary-light">Ibn Tofail</span> de Kenitra
-            au Maroc, je suis actuellement à l'école d'ingénieur{" "}
-            <span className="text-secondary-light">ISGA</span> de Rabat au Maroc
-            pour un diplôme d'{" "}
-            <span className="text-secondary-light">
-              ingénieur en développement web et mobile
-            </span>
-            .
-          </p>
         </div>
         <div className="flex justify-center">
-          <div className="max-w-3xl grid grid-cols-2 py-12 gap-16">
+          <div className="max-w-3xl grid grid-cols-1 md:grid-cols-2 py-12 gap-2 md:gap-16">
             {service.map((s) => (
               <div className=" bg-primary bg-opacity-20 backdrop-filter backdrop-blur-lg anim1 p-6 rounded-xl hover:scale-105 transition-all duration-300">
                 <h3 className="text-3xl text-center text-secondary-light">
@@ -158,7 +143,7 @@ export default function Home() {
                 </h3>
                 <img src={s.image} alt="" className="w-full scale-75" />
                 {/* <div className="h-[2px] w-full bg-accent-light opacity-25 my-7"></div> */}
-                <div className="flex flex-wrap gap-4 justify-center">
+                <div className="flex flex-wrap gap-2 md:gap-4 justify-center">
                   {s.framework.map((f) => (
                     <div className="rounded-lg py-2 px-4 text-black  bg-gray-300 ">
                       {f}
@@ -186,36 +171,41 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="w-full bg-primary-light bg-opacity-10 py-36 lg:px-28 ">
+      <div className="w-full bg-primary-light bg-opacity-10 py-20 lg:px-28 flex flex-wrap justify-center gap-9">
+        {language.map((l) => (
+          <span
+            className={`text-4xl font-secondary font-bold text-accent-light opacity-40 transition-opacity `}
+          >
+            {l}
+          </span>
+        ))}
+      </div>
+      <div className="w-full  py-20 lg:px-28">
         <div className="flex flex-col justify-center items-center">
           <h2 className="group text-[6vw]  text-accent-dark font-special font-semibold hover:text-secondary-light transition-colors 1s">
             <span className="text-[10vw] font-bold text-secondary-light group-hover:text-accent-light transition-colors 1s">
               P
             </span>
-            rojects
+            rojets
           </h2>
-          <p className="text-accent-light font-primary text-lg text-opacity-80 max-w-2xl">
-            Ayant obtenu une licence en{" "}
-            <span className="text-secondary-light ">
-              {" "}
-              Science Mathématique {"&"} Informatique
-            </span>{" "}
-            à l'université{" "}
-            <span className="text-secondary-light">Ibn Tofail</span> de Kenitra
-            au Maroc, je suis actuellement à l'école d'ingénieur{" "}
-            <span className="text-secondary-light">ISGA</span> de Rabat au Maroc
-            pour un diplôme d'{" "}
-            <span className="text-secondary-light">
-              ingénieur en développement web et mobile
-            </span>
-            .
-          </p>
         </div>
+        <Projects projects={results}/>
       </div>
     </>
   );
 }
-
+export async function getServerSideProps() {
+  const request = await fetch(`https://ob2a.herokuapp.com/projects`).then(
+    (res) => res.json()
+    
+  );
+  console.log(request);
+  return {
+    props: {
+      results: request,
+    },
+  };
+}
 //  <Nav />
 //       <div className="w-full h-[90vh] bg-primary-dark flex justify-center items-center text-4xl text-accent-dark">
 //         Hero

@@ -6,7 +6,7 @@ const Nav = () => {
     <div className=" w-full h-16 flex flex-row justify-between items-center  lg:px-28">
       <Logo />
 
-      <div className="max-w-lg flex justify-around items-center">
+      <div className="hidden md:flex max-w-lg  justify-around items-center">
         {MenuList.map((e) => (
           <div
             key={MenuList.indexOf(e)}
@@ -21,9 +21,49 @@ const Nav = () => {
         ))}
       </div>
 
-      <button className="bg-secondary text-accent-light py-2 px-8 rounded-lg font-primary font-bold">
+      <button className="hidden md:block bg-secondary text-accent-light py-2 px-8 rounded-lg font-primary font-bold">
         Contactez moi
       </button>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="54"
+        height="20"
+        viewBox="0 0 71 54"
+        onClick={() => {
+          console.log("works");
+        }}
+        className="cursor-pointer  md:hidden"
+      >
+        <g id="Group_32" data-name="Group 32" transform="translate(7910 -1334)">
+          <rect
+            id="Rectangle_52"
+            data-name="Rectangle 52"
+            width="71"
+            height="12"
+            rx="3"
+            transform="translate(-7910 1334)"
+            fill="#fff"
+          />
+          <rect
+            id="Rectangle_53"
+            data-name="Rectangle 53"
+            width="71"
+            height="12"
+            rx="3"
+            transform="translate(-7910 1355)"
+            fill="#fff"
+          />
+          <rect
+            id="Rectangle_54"
+            data-name="Rectangle 54"
+            width="71"
+            height="12"
+            rx="3"
+            transform="translate(-7910 1376)"
+            fill="#fff"
+          />
+        </g>
+      </svg>
     </div>
   );
 };

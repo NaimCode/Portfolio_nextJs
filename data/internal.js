@@ -3,6 +3,7 @@ export const MenuList = [
   { title: "About", route: "/about" },
   { title: "Projects", route: "/projects" },
 ];
+export const language = ["Java", "Dart", "C++", "Javascript", "Python", "C"];
 export const service = [
   {
     title: "Design UI/UX",
