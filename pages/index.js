@@ -6,7 +6,7 @@ import { service } from "../data/internal";
 import { CheckIcon } from "../components/svg";
 import { language } from "../data/internal";
 import Projects from "../components/Projects";
-export default function Home({results}) {
+export default function Home({ results }) {
   useEffect(() => {
     const callback = function (entries) {
       entries.forEach((entry) => {
@@ -189,15 +189,110 @@ export default function Home({results}) {
             rojets
           </h2>
         </div>
-        <Projects projects={results}/>
+        {results.map((r) => (
+          <div
+            key={r.id}
+            className={`py-7 my-7  flex 
+              bg-primary-light bg-opacity-10 justify-around items-center`}
+          >
+            {results.indexOf(r) % 2 == 0 ? (
+              <img
+                src={r.logo.formats.large.url}
+                alt=""
+                className="w-[55%] anim1"
+              />
+            ) : (
+              <div className="w-[40%] anim2">
+                <h2 className="text-secondary-light text-6xl font-secondary font-semibold">
+                  {r.title}
+                </h2>
+                <p className="text-green-500">{r.description}</p>
+                <div className="w-full h-[1px] bg-white opacity-50 my-4"></div>
+                <div className="flex flex-wrap gap-4">
+                  {r.tags.map((t) => (
+                    <div
+                      key={r.tags.indexOf(t)}
+                      className="rounded-lg py-2 px-4 text-black  bg-gray-300 "
+                    >
+                      <span>{t.title}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="w-full h-[1px] bg-white opacity-50 my-4"></div>
+                <div className="flex gap-8 items-center">
+                  {r.source != null && (
+                    <button
+                      className="text-xl rounded-sm border-secondary-light py-1 px-3 text-secondary-light border-2 my-9 
+             hover:bg-secondary-light hover:text-black transition duration-300 "
+                    >
+                      Code source
+                    </button>
+                  )}
+                  {r.link != null && (
+                    <button
+                      className="text-xl rounded-sm border-secondary-light py-1 px-3 text-secondary-light border-2 my-9 
+             hover:bg-secondary-light hover:text-black transition duration-300 "
+                    >
+                      Lien
+                    </button>
+                  )}
+                </div>
+              </div>
+            )}
+            {results.indexOf(r) % 2 == 0 ? (
+              <div className="w-[40%] anim2">
+                <h2 className="text-secondary-light text-6xl font-secondary font-semibold">
+                  {r.title}
+                </h2>
+                <p className="text-green-500">{r.description}</p>
+                <div className="w-full h-[1px] bg-white opacity-50 my-4"></div>
+                <div className="flex flex-wrap gap-4">
+                  {r.tags.map((t) => (
+                    <div
+                      key={r.tags.indexOf(t)}
+                      className="rounded-lg py-2 px-4 text-black  bg-gray-300 "
+                    >
+                      <span>{t.title}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="w-full h-[1px] bg-white opacity-50 my-4"></div>
+                <div className="flex gap-8 items-center">
+                  {r.source != null && (
+                    <button
+                      className="text-xl rounded-sm border-secondary-light py-1 px-3 text-secondary-light border-2 my-9 
+             hover:bg-secondary-light hover:text-black transition duration-300 "
+                    >
+                      Code source
+                    </button>
+                  )}
+                  {r.link != null && (
+                    <button
+                      className="text-xl rounded-sm border-secondary-light py-1 px-3 text-secondary-light border-2 my-9 
+             hover:bg-secondary-light hover:text-black transition duration-300 "
+                    >
+                      Lien
+                    </button>
+                  )}
+                </div>
+              </div>
+            ) : (
+              <img
+                src={r.logo.formats.large.url}
+                alt=""
+                className="w-[55%] anim1"
+              />
+            )}
+          </div>
+        ))}
       </div>
     </>
   );
 }
+
 export async function getServerSideProps() {
   const request = await fetch(`https://ob2a.herokuapp.com/projects`).then(
     (res) => res.json()
-    
   );
   console.log(request);
   return {

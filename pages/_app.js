@@ -134,8 +134,10 @@ function MyApp({ Component, pageProps }) {
             retina_detect: true,
           }}
         ></Particles>
-        <div className="absolute top-0 left-0 z-50 w-full backdrop-filter backdrop-blur-md">
-          <Nav />
+        <div className="absolute top-0 left-0 z-50 w-full">
+          <div className=" backdrop-filter backdrop-blur-md container">
+            <Nav />
+          </div>
         </div>
         <div className="absolute top-0 h-screen w-full overflow-y-scroll backdrop-filter backdrop-blur-lg">
           <Component {...pageProps} />

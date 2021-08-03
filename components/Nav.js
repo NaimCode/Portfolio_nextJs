@@ -21,8 +21,11 @@ const Nav = () => {
         ))}
       </div>
 
-      <button className="hidden md:block bg-secondary text-accent-light py-2 px-8 rounded-lg font-primary font-bold">
-        Contactez moi
+      <button
+        className="text-xl rounded-md border-secondary-light py-1 px-3 text-secondary-light border-2 my-9 
+             hover:bg-secondary-light hover:text-black transition duration-300 "
+      >
+        Contact
       </button>
       <svg
         xmlns="http://www.w3.org/2000/svg"
