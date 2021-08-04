@@ -22,7 +22,7 @@ const Nav = () => {
       </div>
 
       <button
-        className="text-xl rounded-md border-secondary-light py-1 px-3 text-secondary-light border-2 my-9 
+        className="hidden md:block text-xl rounded-md border-secondary-light py-1 px-3 text-secondary-light border-2 my-9 
              hover:bg-secondary-light hover:text-black transition duration-300 "
       >
         Contact
