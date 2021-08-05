@@ -2,7 +2,66 @@ import "tailwindcss/tailwind.css";
 import Particles from "react-particles-js";
 import Head from "next/head";
 import Nav from "../components/Nav";
+import { useEffect } from "react";
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    const callback = function (entries) {
+      entries.forEach((entry) => {
+        // console.log(entry);
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-topOpa1");
+        } else {
+          entry.target.classList.remove("animate-topOpa1");
+          entry.target.classList.add("opacity-0");
+        }
+      });
+    };
+    const callback2 = function (entries) {
+      entries.forEach((entry) => {
+        // console.log(entry);
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-topOpa2");
+        } else {
+          entry.target.classList.remove("animate-topOpa2");
+          entry.target.classList.add("opacity-0");
+        }
+      });
+    };
+    const callback3 = function (entries) {
+      entries.forEach((entry) => {
+        // console.log(entry);
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fixe");
+        } else {
+          entry.target.classList.remove("fixe");
+          entry.target.classList.add("opacity-0");
+        }
+      });
+    };
+    const observer2 = new IntersectionObserver(callback2);
+
+    const observer3 = new IntersectionObserver(callback3);
+    const observer = new IntersectionObserver(callback);
+    const targets2 = document.querySelectorAll(".anim2");
+    targets2.forEach(function (target) {
+      observer2.observe(target);
+    });
+    const targets = document.querySelectorAll(".anim1");
+    targets.forEach(function (target) {
+      observer.observe(target);
+    });
+
+    const targets3 = document.querySelectorAll(".nav");
+    targets3.forEach(function (target) {
+      observer3.observe(target);
+    });
+    // return () => {
+    //   cleanup
+    // }
+  }, []);
   return (
     <div>
       <Head>

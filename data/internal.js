@@ -1,7 +1,7 @@
 export const MenuList = [
   { title: "Home", route: "/" },
   { title: "About", route: "/about" },
-  { title: "Projects", route: "/projects" },
+  { title: "Projets", route: "/projets" },
 ];
 export const language = ["Java", "Dart", "C++", "Javascript", "Python", "C"];
 export const service = [

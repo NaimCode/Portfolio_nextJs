@@ -1,6 +1,7 @@
 import { Logo } from "./svg";
 import { MenuList } from "../data/internal";
 import Link from "next/link";
+import Router from "next/router";
 const Nav = () => {
   return (
     <div className=" w-full h-16 flex flex-row justify-between items-center  lg:px-28">
@@ -10,7 +11,7 @@ const Nav = () => {
         {MenuList.map((e) => (
           <div
             key={MenuList.indexOf(e)}
-            className="mx-3 text-accent text-lg font-primary hover:scale-110 hover:text-secondary-light transition duration-200"
+            className="mx-3 text-accent text-lg font-primary  hover:scale-110 hover:text-secondary-light transition duration-200"
           >
             <Link href={e.route}>
               <a>
@@ -22,10 +23,13 @@ const Nav = () => {
       </div>
 
       <button
+        onClick={() => {
+          Router.push("/contact");
+        }}
         className="hidden md:block text-xl rounded-md border-secondary-light py-1 px-3 text-secondary-light border-2 my-9 
              hover:bg-secondary-light hover:text-black transition duration-300 "
       >
-        Contact
+        Contactez Moi
       </button>
       <svg
         xmlns="http://www.w3.org/2000/svg"
