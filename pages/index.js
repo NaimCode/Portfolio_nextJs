@@ -214,6 +214,16 @@ export default function Home({ results }) {
           </div>
         ))}
       </div>
+      <div className="w-full  py-20 lg:px-28">
+        <div className="flex flex-col justify-center items-center">
+          <h2 className="group text-4xl md:text-[6vw] text-accent-dark font-special font-semibold ">
+            <span className="text-6xl md:text-[10vw]  font-bold text-secondary-light ">
+              C
+            </span>
+            ontact
+          </h2>
+        </div>
+      </div>
     </>
   );
 }
