@@ -141,6 +141,11 @@ function MyApp({ Component, pageProps }) {
         </div>
         <div className="absolute top-0 h-screen w-full overflow-y-scroll backdrop-filter backdrop-blur-lg">
           <Component {...pageProps} />
+          <div className=" backdrop-filter backdrop-blur-md  p-8 bg-primary-light bg-opacity-10 mt-8">
+            <h4 className="text-center text-2xl text-accent-dark font-special">
+              2021 - NaimDev
+            </h4>
+          </div>
         </div>
       </div>
     </div>
