@@ -1,3 +1,4 @@
+import Link from "next/link";
 const Projects = ({ results }) => {
   return (
     <div className="w-full  py-20 lg:px-28">
@@ -59,20 +60,28 @@ const DescProject = ({ r }) => (
     <div className="w-full h-[1px] bg-white opacity-50 my-4"></div>
     <div className="flex gap-4 md:gap-8 items-center justify-around md:justify-start">
       {r.source != null && (
-        <button
-          className="text-xl rounded-sm border-secondary-light py-1 px-3 text-secondary-light border-2 my-9 
+        <Link href={r.source}>
+          <a target="_blank">
+            <div
+              className="cursor-pointer text-xl rounded-sm border-secondary-light py-1 px-3 text-secondary-light border-2 my-9 
              hover:bg-secondary-light hover:text-black transition duration-300 "
-        >
-          Code source
-        </button>
+            >
+              Code source
+            </div>
+          </a>
+        </Link>
       )}
       {r.link != null && (
-        <button
-          className="text-xl rounded-sm border-secondary-light py-1 px-3 text-secondary-light border-2 my-9 
+        <Link href={r.link}>
+          <a target="_blank">
+            <div
+              className="cursor-pointer text-xl rounded-sm border-secondary-light py-1 px-3 text-secondary-light border-2 my-9 
              hover:bg-secondary-light hover:text-black transition duration-300 "
-        >
-          Lien
-        </button>
+            >
+              Lien
+            </div>
+          </a>
+        </Link>
       )}
     </div>
   </div>
