@@ -194,7 +194,7 @@ function MyApp({ Component, pageProps }) {
           }}
         ></Particles>
         <div className="absolute top-0 left-0 z-50 w-full">
-          <div className=" backdrop-filter backdrop-blur-md container">
+          <div className=" backdrop-filter backdrop-blur-3xl container">
             <Nav />
           </div>
         </div>

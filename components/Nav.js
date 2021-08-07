@@ -79,7 +79,30 @@ const Nav = () => {
           </g>
         </svg>
       </div>
-      <div className="flex flex-col py-24 "></div>
+      <div className="flex flex-col py-24 ">
+        {MenuList.map((e) => (
+          <div
+            key={MenuList.indexOf(e)}
+            className="mx-3 text-accent text-lg font-primary  hover:scale-110 hover:text-secondary-light transition duration-200"
+          >
+            <Link href={e.route}>
+              <a>
+                <span>{e.title}</span>
+              </a>
+            </Link>
+          </div>
+        ))}
+
+        <button
+          onClick={() => {
+            Router.push("/contact");
+          }}
+          className="text-xl rounded-md border-secondary-light py-1 px-3 text-secondary-light border-2 my-9 
+             hover:bg-secondary-light hover:text-black transition duration-300 "
+        >
+          Contactez Moi
+        </button>
+      </div>
     </div>
   );
 };
