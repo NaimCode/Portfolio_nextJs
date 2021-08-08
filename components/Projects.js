@@ -1,5 +1,6 @@
 import Link from "next/link";
 const Projects = ({ results }) => {
+  
   return (
     <div className="w-full  py-20 lg:px-28">
       <div className="flex flex-col justify-center items-center">

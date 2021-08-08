@@ -7,7 +7,7 @@ const Contact = () => {
           <div class="flex flex-wrap -m-2">
             <div class="p-2 w-1/2">
               <div class="relative anim1">
-                <label for="name" class="leading-7 text-sm text-gray-600">
+                <label for="name" class="leading-7 text-lg text-gray-600">
                   Nom
                 </label>
                 <input
@@ -20,7 +20,7 @@ const Contact = () => {
             </div>
             <div class="p-2 w-1/2">
               <div class="relative anim1">
-                <label for="email" class="leading-7 text-sm text-gray-600">
+                <label for="email" class="leading-7 text-lg text-gray-600">
                   Email
                 </label>
                 <input
@@ -33,7 +33,7 @@ const Contact = () => {
             </div>
             <div class="p-2 w-full">
               <div class="relative anim2">
-                <label for="message" class="leading-7 text-sm text-gray-600">
+                <label for="message" class="leading-7 text-lg text-gray-600">
                   Message
                 </label>
                 <textarea
@@ -44,7 +44,12 @@ const Contact = () => {
               </div>
             </div>
             <div class="py-2 px-7 w-full anim2">
-              <button class="flex mx-auto text-white bg-secondary-light border-0 py-2 px-8 focus:outline-none hover:bg-secondary rounded text-lg font-primary">
+              <button
+                class="flex mx-auto text-white bg-secondary-light border-0 py-2 px-8 focus:outline-none hover:bg-secondary rounded text-lg font-primary"
+                onClick={() => {
+                  sendEmail();
+                }}
+              >
                 Envoyer
               </button>
             </div>

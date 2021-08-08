@@ -30,8 +30,8 @@ export const Logo = () => {
             y2="1"
             gradientUnits="objectBoundingBox"
           >
-            <stop offset="0" stop-color="#F77F00" />
-            <stop offset="1" stop-color="#F77F00" />
+            <stop offset="0" stop-color="#FFA647" />
+            <stop offset="1" stop-color="#FFA647" />
           </linearGradient>
           <filter
             id="middle"
