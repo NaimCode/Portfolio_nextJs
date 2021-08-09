@@ -1,7 +1,7 @@
 const About = () => {
   return (
     <div className="px-2 md:px-0 flex flex-col md:flex-row md:justify-around  w-full h-auto bg-primary-light bg-opacity-10 py-10 md:py-36  lg:px-28">
-      <div className="w-full md:w-2/5 h-[300px] md:h-[400px] bg-secondary-light overflow-hidden  anim1">
+      <div className="overflow-hidden  anim1 w-full md:w-2/5 h-[300px] md:h-[400px] bg-secondary-light ">
         <img src="../avatar.jpg" alt="" className="object-cover" />
       </div>
       <div className="w-full md:w-[50%] h-auto md:h-[400px] flex flex-col anim2">
