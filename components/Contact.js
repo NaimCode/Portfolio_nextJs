@@ -44,12 +44,7 @@ const Contact = () => {
               </div>
             </div>
             <div class="py-2 px-7 w-full anim2">
-              <button
-                class="flex mx-auto text-white bg-secondary-light border-0 py-2 px-8 focus:outline-none hover:bg-secondary rounded text-lg font-primary"
-                onClick={() => {
-                  sendEmail();
-                }}
-              >
+              <button class="flex mx-auto text-white bg-secondary-light border-0 py-2 px-8 focus:outline-none hover:bg-secondary rounded text-lg font-primary">
                 Envoyer
               </button>
             </div>
