@@ -7,8 +7,9 @@ import { CheckIcon } from "../components/svg";
 import { language } from "../data/internal";
 import Projects from "../components/Projects";
 import Link from "next/link";
-import Contact from "../components/contact";
+
 import About from "../components/About";
+import ContactSection from "../components/ContactSection";
 export default function Home({ results }) {
   const [isMobile, setisMobile] = useState();
 
@@ -41,7 +42,7 @@ export default function Home({ results }) {
           <img src="/hero.svg" alt="" className=" w-full h-auto md:h-[60vh] " />
         </div>
       </div>
-     <About/>
+      <About />
       <div className="w-full px-2 py-4 lg:px-28 ">
         <div className="flex flex-col justify-center items-center">
           <h2 className="group text-4xl md:text-[6vw] text-accent-dark font-special font-semibold ">
@@ -107,7 +108,7 @@ export default function Home({ results }) {
             ontact
           </h2>
         </div>
-        <Contact />
+        <ContactSection />
       </div>
     </>
   );

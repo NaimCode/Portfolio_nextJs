@@ -1,9 +1,9 @@
-import Contact from "../components/contact";
+import ContactSection from "../components/ContactSection";
 
 const contact = () => {
   return (
     <div className="pt-24">
-      <Contact />
+      <ContactSection />
     </div>
   );
 };

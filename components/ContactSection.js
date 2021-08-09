@@ -1,5 +1,5 @@
 import Link from "next/link";
-const Contact = () => {
+const ContactSection = () => {
   return (
     <section class="text-gray-600 py-5 body-font relative">
       <div class="container px-5  mx-auto">
@@ -118,4 +118,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactSection;
