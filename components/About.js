@@ -11,7 +11,7 @@ const About = () => {
           </span>
           bout Me
         </h2>
-        <div className="flex-grow flex flex-col justify-center">
+        <div className=" flex-grow flex flex-col justify-center">
           <p className="text-center md:text-left text-accent-light font-primary text-lg text-opacity-80 ">
             Ayant obtenu une licence en{" "}
             <span className="text-secondary-light ">
