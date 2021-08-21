@@ -12,7 +12,7 @@ import About from "../components/About";
 import ContactSection from "../components/ContactSection";
 export default function Home({ results }) {
   const [isMobile, setisMobile] = useState();
-  //jjkjkjkjjk
+
   return (
     <>
       <div className="text-accent-light px-2 md:px-0 h-auto flex flex-col md:flex-row justify-center md:justify-around items-center w-full md:h-[100vh]   lg:px-28 ">
