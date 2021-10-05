@@ -74,7 +74,7 @@ export const Logo = () => {
               height="46"
               rx="8.5"
               transform="translate(12.13 11.01)"
-              fill="#FFA647"
+              fill="#FFF"
             />
           </g>
           <g
@@ -100,7 +100,7 @@ export const Logo = () => {
               height="46"
               rx="8.5"
               transform="translate(44.13 11.01)"
-              fill="#FFA647"
+              fill="#FFF"
             />
           </g>
         </g>
