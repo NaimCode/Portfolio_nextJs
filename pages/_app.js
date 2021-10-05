@@ -67,6 +67,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Naim Dev</title>
         <link rel="icon" href="/logo.png" />
+        <meta name="theme-color" content="#11001C" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link

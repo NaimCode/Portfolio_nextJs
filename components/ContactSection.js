@@ -51,15 +51,18 @@ const ContactSection = () => {
             <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center anim2">
               <a class="text-indigo-500">naimdev4@gmail.com</a>
               <p class="leading-normal my-5">
-                00212 70004881 - 00235 68060500
+                00212 70004881
                 <br />
-                Diguel, Rue 30
+                Adgal, Avenue de France
                 <br />
-                N'Djamena - TCHAD
+                Rabat - MAROC
               </p>
               <span class="inline-flex">
-                <Link href="">
-                  <a class="text-gray-500">
+                <Link
+                  target="_blank"
+                  href="https://www.facebook.com/profile.php?id=100003321738055"
+                >
+                  <a target="_blank" class="text-gray-500">
                     <svg
                       fill="currentColor"
                       stroke-linecap="round"
