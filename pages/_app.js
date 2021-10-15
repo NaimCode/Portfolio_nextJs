@@ -66,7 +66,7 @@ function MyApp({ Component, pageProps }) {
     <div>
       <Head>
         <title>Naim Dev</title>
-        <link rel="icon" href="/logo.png" />
+        <link rel="icon" href="logo.png" />
         <meta name="theme-color" content="#11001C" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -196,10 +196,8 @@ function MyApp({ Component, pageProps }) {
           }}
         ></Particles>
 
-        <div>
-          <div className="absolute  top-0 left-0 z-50 backdrop-filter backdrop-blur-3xl container">
-            <Nav />
-          </div>
+        <div className="absolute mx-auto  top-0 left-0 z-50 backdrop-filter backdrop-blur-3xl w-full">
+          <Nav />
         </div>
 
         <div className="absolute top-0 h-screen w-full overflow-y-scroll backdrop-filter backdrop-blur-lg">
